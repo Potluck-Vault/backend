@@ -1,9 +1,9 @@
 exports.seed = function (knex) {
     return knex('users').insert(
       {
-        username: "admin",
-        password: "password",
-        email: "admin@potlucks.com"
+        user_username: "admin",
+        user_password: "password",
+        user_email: "admin@potlucks.com",
       }
     );
   };
