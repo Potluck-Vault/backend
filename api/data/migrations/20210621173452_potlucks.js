@@ -9,7 +9,6 @@ exports.up = async (knex) => {
       potlucks.string('potluck_location', 100).notNullable()
       potlucks.integer("user_id")
             .unsigned()
-            .notNullable()
             .references("user_id")
             .inTable("users")
             .onDelete("CASCADE")
