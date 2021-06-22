@@ -7,8 +7,8 @@ const cors = require('cors')
 
 const potlucksRouter = require('./potluck/router')
 const usersRouter = require('./user/router')
-
-
+const authRouter = require('./auth/auth-router')
+const restrict = require('./auth/auth-middleware') // needs to be added to signed in page
 
 server.use(express.json())
 server.use('/api/potlucks', potlucksRouter)
