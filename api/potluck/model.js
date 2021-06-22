@@ -9,14 +9,17 @@ async function getAllPotlucks() {
             potluck_date,
             potluck_time,
             potluck_location,
-            user_id, } = potluck;
+            user_id,
+         } = potluck;
+         
         return {
             potluck_id: potluck_id,
             potluck_name: potluck_name,
             potluck_date: potluck_date,
             potluck_time: potluck_time,
             potluck_location: potluck_location,
-            user_id: user_id 
+            user_id: user_id, 
+
             }
 
     })
