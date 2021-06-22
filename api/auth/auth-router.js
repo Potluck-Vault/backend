@@ -1,5 +1,4 @@
-const { checkUsernameFree, checkFields, verifyReturningUser } = require('./auth-middleware');
-const tokenBuilder = require('../middleware/token-builder')
+const { checkUsernameFree, checkFields, verifyReturningUser, makeToken } = require('./auth-middleware');
 const Auth = require('./auth-model')
 const bcrypt = require('bcryptjs')
 const router = require('express').Router();
@@ -24,7 +23,7 @@ router.post('/register', checkUsernameFree, checkFields, (req, res, next) => {
     
     Auth.findBy({username})
       .then(([user]) => {
-        const token = tokenBuilder(user)
+        const token = makeToken(user)
         res.json({
           message: `welcome, ${user.username}`,
           token
